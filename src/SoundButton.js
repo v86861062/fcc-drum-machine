@@ -38,7 +38,7 @@ class SoundButton extends Component {
       <div className="drum-pad" id={this.props.id} onClick={this.playAudio}>        
         <audio id={this.props.keyLetter} className="clip"
           ref={this.sound} src={this.props.soundSrc}/>
-        {this.props.keyLetter}
+        <p>{this.props.keyLetter}</p>
       </div>
     )
   }

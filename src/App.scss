@@ -1,0 +1,78 @@
+#drum-machine {
+  position: relative;
+  padding: 1px; /* for Collapsing margins :( */  
+  margin: 0 auto;
+  width: 600px;
+  height: 320px;
+  border-radius: 10px;  
+  background-color: dimgrey;
+}
+
+#display { 
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  
+  width: 250px;
+  height: 1.25em;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: red;
+}
+
+.buttons-area {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 300px;  
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 40px;
+  text-align: center;
+}
+
+.swtich-area {  
+  position: absolute;
+  top: 130px;
+  right: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+}
+
+.volume-area {
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  
+  p {    
+    text-align: center;
+  }  
+  
+  //TODO: 只有chrome顯示比較正常 :(
+  input {
+    width: 100%;
+    transform: translate(0px, -40px) rotate(270deg);
+    cursor: pointer;
+  }
+}
+
+.drum-pad {
+  width: 80px;
+  height: 80px; 
+  border-radius: 15px;
+  margin: 3px;
+
+  cursor: pointer;
+  background-color: greenyellow;
+
+  //TODO: IE 11 無效 :(
+  display: flex; /* Vertically Center text */
+  P {
+    margin: auto; /* Vertically Center text */ 
+    text-align: center; 
+  } 
+}

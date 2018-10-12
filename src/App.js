@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 import SoundButton from './SoundButton.js'
 import Switch from './Switch.js'
 import TextDisplay from './TextDisplay'
@@ -94,7 +94,7 @@ class App extends Component {
 
   handlePowerPress = () => {    
     this.setState(prevState => ({ power: !prevState.power }))
-    this.setDisplayText(this.state.power ? "power:OFF" : "power:ON")
+    this.setDisplayText(this.state.power ? "Power: OFF" : "Power: ON")
   }
 
   handleBankPress = () => {    
@@ -134,26 +134,33 @@ class App extends Component {
 
     return (
       <div id="drum-machine">
-        <div className="buttons">
+        
+        <div className="buttons-area">
           {buttons}
         </div>
 
-        <Switch 
-          name="Power"
-          onClick={this.handlePowerPress} 
-          switchOn={this.state.power} />
-        
-        <Switch 
-          name="Bank"
-          onClick={this.handleBankPress} 
-          switchOn={this.state.bank} />
+        <div className="swtich-area">
+          <Switch 
+            name="Power"
+            onClick={this.handlePowerPress} 
+            switchOn={this.state.power} />
+          
+          <Switch 
+            name="Bank"
+            onClick={this.handleBankPress} 
+            switchOn={this.state.bank} />
+        </div>
 
         <TextDisplay 
           text={this.state.text} />
 
-        <input type="range" min="0" max="1" step="0.01" 
-          value={this.state.volume} 
-          onChange={this.handleVolumeChange}/>
+        <div className="volume-area">          
+          <input type="range" min="0" max="1" step="0.01" 
+            value={this.state.volume} 
+            onChange={this.handleVolumeChange}/>
+          <p>volume</p>
+        </div>
+        
       </div>
     )
   }

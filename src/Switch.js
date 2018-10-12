@@ -1,24 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const onSstyle = { 
-    backgroundColor: 'red',
-}
-const offStyle = { 
-    backgroundColor: 'black',
-}
+import './Switch.scss';
 
 function Switch(props){
-        let style = props.switchOn ? onSstyle : offStyle
-        return (
-            <div>
-                <div>{props.name}</div>
-                <div className="switch" 
-                    style={style}
-                    onClick={props.onClick}>                
-                </div>
-            </div>
-        )
+    return (
+        <label className="switch">
+            <p>{props.name}</p>
+            <input type="checkbox"
+                onClick={props.onClick}
+                checked={props.switchOn}
+                readOnly/>
+            <span className="slider"></span>
+        </label>
+    )
 }
 
 Switch.propTypes = {
